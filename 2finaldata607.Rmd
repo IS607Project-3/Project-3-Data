@@ -1,0 +1,443 @@
+---
+output:
+  html_document: default
+  pdf_document:
+    latex_engine: lualatex
+---
+1.Introduction
+
+  * Team Members
+    
+2.Data Collection
+
+  * Sources
+      + LinkedIn.com
+      + Dice.com
+      + KDNuggets.com
+      
+  * Approaches
+     + The Skills
+     + The Market
+     + The Leaders
+     
+3.Data Cleaning，Data Analysis & Data Visualization
+
+4.Conclusion
+ 
+ 
+# INTRODUCTION
+**Team Leader：Shron Morris**  
+
+|    Team member (based on last names)  |
+| ------------- |:---------------------:| 
+| Judd Anderman | Marco Siqueira Campos | 
+| Ka Man Chan   |   Talha Muhammad      |  
+| Bin Lin       |    Yefei Li           |   
+| Scott Ogden   |    Jose Zuniga        | 
+
+For Project 3, we're using data to answer the question,"which are the most valued data science skills?" As a team, we want to determine whether soft skills (collaborative, teamwork...) or technical skills are more importantfor data science leadership roles 
+
+**Our Approach** 
+  
+  + The Skills
+  + The Market
+  + The Leaders
+  
+our approach is to first determine which resources we can use to collect the data, and how to scrap it. Then we perfrom data cleaning, tidying and transformations, and provide data analysis. Finally, we provide further explanation based on the visual and draw the conclusion. 
+
+# DATA COLLECTION
+
+We mainly focus on 3 different methods to collect data and determine what valuable data siecen skills might be.
+
+**Method 1: Which skills?**
+  + Identified skills by scraping web data from kdnuggets.com and retrieved 80+ skills from 9 articles identifying data science skills
+
+**Method 2: How are skills valued on the market?**
+  + Used API from Dice.com, querying skill set from kdnuggets and retrieved first 50 job postings for each skill
+
+**Method 3: Which skills do Data Science leaders have?**
+ + Scraped skills from Linkedin profiles of data science leaders ID’d by KDnuggets and LinkedIn
+Retrieved ~650 unique skills from 43 user profiles
+
+**Data from KDNuggets**
+Doing Web Scrapping for the Data Scientists' Skill Set
+Sources: http://www.kdnuggets.com
+KDnugget is a leading site on Business Analytics, Big Data, Data Mining, and Data Science, and is managed by Gregory Piatetsky-Shapiro, a leading expert in the field.
+ 
+```{r Web_Scraping_with_R}
+ 
+list.of.packages <- c("rvest","plyr","stringr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+ 
+library(rvest)
+library(plyr)
+library(stringr)
+ 
+##############################################################################################################
+# Dataframe 1
+# How to Become a Data Scientist
+# Filtered by <Strong></Strong>
+ 
+DSS1={}
+ 
+Pages = c("http://www.kdnuggets.com/2016/08/become-data-scientist-part-1.html",
+          "http://www.kdnuggets.com/2016/08/become-data-scientist-part-1.html/2",
+          "http://www.kdnuggets.com/2016/08/become-data-scientist-part-1.html/3",
+          "http://www.kdnuggets.com/2016/08/become-data-scientist-part-1.html/4"
+        )
+ 
+for(i in 1:4){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("strong") %>% html_text()
+  DSS1 <- rbind(DSS1,data.frame(Skill))
+  }
+DSS1<-subset(DSS1, Skill!="Next post" & Skill!="Previous post")
+DSS1
+ 
+##############################################################################################################
+# Dataframe 2
+# 10 Must Have Data Science Skills, Updated
+# Filtered by <p><b></b></p>
+ 
+DSS2={}
+ 
+Pages = c("http://www.kdnuggets.com/2016/05/10-must-have-skills-data-scientist.html",
+          "http://www.kdnuggets.com/2016/05/10-must-have-skills-data-scientist.html/2"
+         )
+for(i in 1:2){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("p") %>% html_nodes("b") %>% html_text()
+  DSS2 <- rbind(DSS2,data.frame(Skill))
+  }
+DSS2<-subset(DSS2, Skill!="Next post" & Skill!="Previous post" & Skill!="Additional Resources" & Skill!="Related" & Skill!="data scientist" & Skill!="somewhere" & Skill!="do" & Skill!="any")
+DSS2
+ 
+##############################################################################################################
+# Dataframe 3
+# 3 ways to become a better Data Scientist
+# Filtered by <p><em></em></p>
+ 
+DSS3={}
+ 
+Pages = c("http://www.kdnuggets.com/2016/04/odsc-east-2016-journey-data-scientist.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("p") %>% html_nodes("em") %>% html_text()
+  DSS3 <- rbind(DSS3,data.frame(Skill))
+  }
+DSS3
+ 
+##############################################################################################################
+# Dataframe 4
+# Software development skills for data scientists
+# Filtered by <h3></h3>
+
+DSS4={}
+ 
+Pages = c("http://www.kdnuggets.com/2015/12/software-development-skills-data-scientists.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("h3") %>% html_text()
+  DSS4 <- rbind(DSS4,data.frame(Skill))
+}
+DSS4<-subset(DSS4, Skill!="Latest News, Stories" & Skill!="Conclusion" & Skill!="More Recent Stories")
+DSS4
+ 
+##############################################################################################################
+# Dataframe 5
+# Practical skills that practical data scientists need
+# Filtered by <h4></h4>
+
+DSS5={}
+ 
+Pages = c("http://www.kdnuggets.com/2016/05/practical-skills-practical-data-scientists-need.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("h4") %>% html_text()
+  DSS5 <- rbind(DSS5,data.frame(Skill))
+  }
+DSS5
+ 
+##############################################################################################################
+# Dataframe 6
+# Unicorn Data Scientists vs Data Science Teams
+# Filtered by class="three_ul" and <li></li>"
+
+DSS6={}
+ 
+Pages = c("http://www.kdnuggets.com/2013/12/unicorn-data-scientists-vs-data-science-teams-discussion.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes(css=".three_ul") %>% html_nodes("li") %>% html_text()
+  Skill=str_replace(Skill,"\n","")
+  DSS6 <- rbind(DSS6,data.frame(Skill))
+}
+DSS6<-subset(DSS6, Skill!=" etc.")
+DSS6
+ 
+##############################################################################################################
+# Dataframe 7
+# 9 Must-Have Skills You Need to Become a Data Scientist
+# Filtered by class="three_ol" and <strong></strong>"
+ 
+DSS7={}
+ 
+Pages = c("http://www.kdnuggets.com/2014/11/9-must-have-skills-data-scientist.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes(css=".three_ol") %>% html_nodes("strong") %>% html_text()
+  Skill=str_replace(Skill,"\n","")
+  DSS7 <- rbind(DSS7,data.frame(Skill))
+}
+DSS7<-subset(DSS7, Skill!=" etc." & Skill!="Advanced Degree" & Skill!="MOOCs" & Skill!="Certifications" & Skill!="Bootcamps" & Skill!="Kaggle" & Skill!="LinkedIn Groups" & Skill!="Data Science Central and KDnuggets" & Skill!="The Burtch Works Study: Salaries of Data Scientist")
+DSS7
+ 
+##############################################################################################################
+# Dataframe 8
+# Data Science Skills for 2016
+# Filtered by  <p> and <strong></strong>"
+ 
+DSS8={}
+ 
+Pages = c("http://www.kdnuggets.com/2016/02/data-science-skills-2016.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("p") %>% html_nodes("strong") %>% html_text()
+  DSS8 <- rbind(DSS8,data.frame(Skill))
+}
+DSS8<-subset(DSS8, Skill!=" Fig 1.  Most Common Data Science Job skills, according to Crowdflower" & Skill!="Related:")
+DSS8
+ 
+##############################################################################################################
+# Dataframe 9
+# How to become a Data Scientist for Free
+# Filtered by <h3></h3>"
+ 
+DSS9={}
+ 
+Pages = c("http://www.kdnuggets.com/2015/08/how-become-data-scientist-free.html")
+for(i in 1:1){
+  Data_Science_Skills =read_html(Pages[i])
+  Skill=Data_Science_Skills %>%   html_nodes("h3") %>% html_text()
+  DSS9 <- rbind(DSS9,data.frame(Skill))
+}
+DSS9<-subset(DSS9, Skill!="Latest News, Stories" & Skill!="More Recent Stories")
+DSS9
+ 
+##############################################################################################################
+# Combined all 9 Dataframe into 1
+ 
+DSS10=rbind.fill(DSS1,DSS2,DSS3,DSS4,DSS5,DSS6,DSS7,DSS8,DSS9)
+DSS10
+ 
+```
+ 
+```{r Conclusion, echo=FALSE}
+ 
+##  Conclusion
+### Scraping from 9 articles related to Data Scientists' Skill set
+### Found 81 skill sets (include duplicate and irrelvant rows)
+ 
+```
+ 
+---
+title: "Project3_API"
+author: "Team"
+date: "October 18, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r API}
+# Introduction
+# Passing 107 Skill set to Dice.com API to get the job title, company name
+
+# JSON :
+
+json_file=c(
+
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Owning Up To The Title",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Problem Solving",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Statistics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Machine Learning",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Computing",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Wrangling",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Tools and Technology",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Communication",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Business Acumen",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Rock Stars",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Other Scientific Disciplines",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Statistics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Computer Science",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Software Engineering",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Mathematics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=The Blank Canvas",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Education",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Intellectual Curiosity",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Domain Knowledge",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Communication Skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Career Mapping",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Goals",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Coding Skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Mining Skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Big Data Processing Platforms",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Hadoop",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Spark",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Flink",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Structured Data (SQL)",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Unstructured Data (3-5 top NoSQL DBs)",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Knowledge",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Open Source data science tools",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Exposure",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Writing modular",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=reusable code",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Documentation",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=commenting",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Version control",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Testing",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Logging",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=understand the business and the problem",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Understanding the data",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=SQL skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Basic math skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Slightly more advanced math concepts",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Advanced Analysis",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Math",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Stats",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Pattern Recognition/",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Learning",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Uncertainty",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Computer Systems",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Advanced Computing",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=High Performance Computing",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Mining",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Bases",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Engineering",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Warehousing.",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Basic CS",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Software Development",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Tools",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Engineering",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Distributed Computing",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Scientific Training",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Mathematics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Modeling",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Theory",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Machine Learning",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Business Analytics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Graph Mining",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Network Intelligence",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Text Mining",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Information Retrieval",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Visualization",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Finance",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Consumer Internet",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Oil & Gas",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Bioinformatics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Physics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Advertising",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Education",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=SAS",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Python Coding",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Hadoop Platform",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=SQL Database",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Coding",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Unstructured data",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Intellectual curiosity",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Business acumen",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Communication skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=SQL",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Visualization",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Communication Skills",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Hadoop",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Spark",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Python",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Statistics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=R",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Creativity",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Python",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Machine Learning",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=R Language",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Big Data",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Statistics",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Data Mining",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=SQL",
+"http://service.dice.com/api/rest/jobsearch/v1/simple.json?skill=Java"
+)
+length(json_file)
+
+
+list.of.packages <- c("XML","RCurl","jsonlite", "methods")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+library(XML)
+library(RCurl)
+library(jsonlite)
+library("methods")
+
+# Read  records from the JSON and export to CSV
+for(i in 1 : length(json_file)){
+  
+  jsondoc <- fromJSON(txt=json_file[i])
+  
+  Report=paste("Count: ", jsondoc$count, " ", json_file[i])
+  
+  write.table(Report, file = "C:\\Users\\TAX\\Desktop\\API_COUNT.csv", append = TRUE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = TRUE,
+            col.names = TRUE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+
+  write.table(jsondoc, file = "C:\\Users\\TAX\\Desktop\\API_Job.csv", append = TRUE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = TRUE,
+            col.names = TRUE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+  print(jsondoc)
+}
+```
+
+Click on the text below to see the results in pdf file
+[**DATA from LinkedIn.com and Dice.com**](https://github.com/IS607Project-3/Project-3-Data/blob/master/Project3_Skills_Public-2.pdf)
+
+
+# [3.Data Cleaning，Data Analysis & Data Visualization](https://github.com/IS607Project-3/Project-3-Data/blob/master/SQL%2BANALYSIS.pdf)
+
+After scraping data from the relevant HTML text and attribute nodes from the above wesbites, our team perfromed necessary data cleaning and transformations. We perfromed downstream analysis and match character cases with tolower() and then using dplyr::distinct() with unique skills.The results are presented in the PDF file. 
+
+**Data Categories**
+We create a dictionary in which to classify skill between technical and non-technical. And in the non-technical defined five categories according to skill.
+
+|    Technical               | Non-technical                            |
+| -------------------------- |:----------------------------------------:| 
+| Programming (R, Python, …) | Communication (presentation,..)          | 
+| Stats/Math                 | Management (project management, ..)      |  
+| DataBase                   | Soft skills (teamwork, collaborative,...)|   
+| Machine Learning           | Human resources (develop people,...)     | 
+|                            | Other (language, hobbies,...)            |
+
+**Findings**
+
+Technical skills were found to be the most important data science skills, as we hope.Management is the most important non-technical skills followed by human resources and communication. Soft skills is last in importance for data science, from four.
+
+**Future Research Steps and Spin-off Ideas**
+
+1.Build a more robust profile successful data science skills taking into account
+
+  * job tenure
+  * seniority 
+  * coverage in the press/visibility
+  
+2.What skills are needed for data scientists to go on and start the next uber or amazon?
+
+3.Build a profile modeler, how you profile match to a job post?
+
+
+
+
+
+
