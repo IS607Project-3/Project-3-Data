@@ -1,0 +1,700 @@
+"","skill","family","category"
+"1","access","t",
+"2","accounting","nt","mn"
+"3","acl","t",
+"4","activity context representation","t",
+"5","adaptive software","t",
+"6","advanced analysis","t",
+"7","advanced computing","t",
+"8","advanced excel","t",
+"9","advanced linear algebra","t",
+"10","advanced statistical analysis","t",
+"11","advertising sales","nt","mn"
+"12","agile methoden","t",
+"13","agile methodologies","t",
+"14","agile project management","nt","mn"
+"15","air force","nt","ot"
+"16","akka","nt","ot"
+"17","algorithmen","t",
+"18","algorithms","t",
+"19","amazon web services (aws)","t",
+"20","analysis","t",
+"21","analysis services","t",
+"22","analytical skills","t",
+"23","analytics","t",
+"24","analytik","t",
+"25","android development","t",
+"26","anomaly detection","t",
+"27","apache","t",
+"28","apache http server","t",
+"29","apache pig","t",
+"30","apache spark","t",
+"31","apache storm","t",
+"32","applied mathematics","t",
+"33","arcgis","t",
+"34","arcgis online","t",
+"35","architecture","t",
+"36","architectures","t",
+"37","arcpy","t",
+"38","army","t",
+"39","artificial intelligence","t",
+"40","artificial neural networks","t",
+"41","asset management","nt","mn"
+"42","astronomy","nt","ot"
+"43","astrophysics","t",
+"44","automata theory","t",
+"45","automation","t",
+"46","automobilindustrie","t",
+"47","backtesting","t",
+"48","balanced scorecard","nt","mn"
+"49","banking","t",
+"50","basic cs","t",
+"51","basic math skills","t",
+"52","bayesian networks","t",
+"53","benchmarking","nt","mn"
+"54","big 4","t",
+"55","big data","t",
+"56","big data analytics","t",
+"57","big data processing platforms","t",
+"58","bioinformatics","t",
+"59","biomedical engineering","t",
+"60","blended learning","t",
+"61","blended learning solutions","t",
+"62","blockchain","t",
+"63","blogging","t",
+"64","book writing","nt","ot"
+"65","brand loyalty","nt","mn"
+"66","brand management","nt","mn"
+"67","business acumen","nt","ot"
+"68","business alliances","nt","mn"
+"69","business analysis","t",
+"70","business analytics","t",
+"71","business consulting","nt","mn"
+"72","business development","nt","mn"
+"73","business intelligence","t",
+"74","business objects","t",
+"75","business planning","nt","mn"
+"76","business process","nt","mn"
+"77","business process design","nt","mn"
+"78","business process improvement","nt","mn"
+"79","business process management","nt","mn"
+"80","business requirements","nt","mn"
+"81","business rules","nt","mn"
+"82","business statistics","t",
+"83","business strategy","nt","mn"
+"84","business transformation","nt","mn"
+"85","business writing","nt","ot"
+"86","business-intelligence","t",
+"87","c","t",
+"88","c#","t",
+"89","c++","t",
+"90","career development","nt","hr"
+"91","career mapping","nt","hr"
+"92","change management","nt","hr"
+"93","character(0)","t",
+"94","chinese language teaching","nt","ot"
+"95","cissp","t",
+"96","cloud computing","t",
+"97","cluster","t",
+"98","cluster analysis","t",
+"99","coaching","nt","hr"
+"100","coding","t",
+"101","coding skills","t",
+"102","cognos","t",
+"103","collaborative filtering","t",
+"104","collaborative learning","nt","ss"
+"105","command","t",
+"106","commenting","t",
+"107","communication","nt","co"
+"108","communication skills","nt","co"
+"109","community development","nt","ot"
+"110","community engagement","nt","ot"
+"111","community outreach","nt","ot"
+"112","competitive analysis","nt","mn"
+"113","competitive intelligence","t",
+"114","computational biology","t",
+"115","computational intelligence","t",
+"116","computer graphics","t",
+"117","computer science","t",
+"118","computer security","t",
+"119","computer systems","t",
+"120","computer vision","t",
+"121","computerwissenschaft","t",
+"122","computing","t",
+"123","conference speaking","nt","co"
+"124","consulting","t",
+"125","consumer behavior","t",
+"126","consumer behaviour","t",
+"127","consumer internet","t",
+"128","content development","t",
+"129","context","t",
+"130","context-aware computing","t",
+"131","controlling budgets","t",
+"132","corporate communications","nt","co"
+"133","corporate finance","nt","mn"
+"134","corporate strategy formulation","nt","mn"
+"135","corporate university","nt","hr"
+"136","cosmology","t",
+"137","creative concept development","t",
+"138","creative problem solving","t",
+"139","credit derivatives","t",
+"140","crm","t",
+"141","cross-cultural communication skills","nt","co"
+"142","cross-functional team leadership","nt","ss"
+"143","crystal reports","t",
+"144","css","t",
+"145","cto","t",
+"146","current affairs","t",
+"147","customer analysis","t",
+"148","customer analytics","t",
+"149","customer loyalty","nt","mn"
+"150","customer relationship management","t",
+"151","customer relationship management (crm)","t",
+"152","customer satisfaction","nt","mn"
+"153","customer service","t",
+"154","customer support","t",
+"155","cyber security","t",
+"156","d3.js","t",
+"157","dashboard","t",
+"158","dashboard metrics","t",
+"159","dashboards","t",
+"160","data analysis","t",
+"161","data analytics","t",
+"162","data bases","t",
+"163","data engineering","t",
+"164","data governance","t",
+"165","data integration","t",
+"166","data management","t",
+"167","data migration","t",
+"168","data mining","t",
+"169","data mining skills","t",
+"170","data modeling","t",
+"171","data processing","t",
+"172","data profiling","t",
+"173","data quality","t",
+"174","data research","t",
+"175","data science","t",
+"176","data structures","t",
+"177","data visualization","t",
+"178","data warehousing","t",
+"179","data warehousing.","t",
+"180","data wrangling","t",
+"181","database design","t",
+"182","database systems","t",
+"183","databases","t",
+"184","datastage","t",
+"185","datenbanken","t",
+"186","dax","t",
+"187","db2","t",
+"188","decision analysis","nt","mn"
+"189","decision management","nt","mn"
+"190","decision management systems","t",
+"191","decision modeling","t",
+"192","decision support","t",
+"193","decision trees","t",
+"194","deep learning","t",
+"195","deep neural networks","t",
+"196","derivatives trading","t",
+"197","design patterns","t",
+"198","digital image processing","t",
+"199","digital media","t",
+"200","digital media strategy","t",
+"201","digital signal processing","t",
+"202","digital strategy","t",
+"203","direct marketing","t",
+"204","disruptive technologies","t",
+"205","distributed computing","t",
+"206","distributed systems","t",
+"207","django","t",
+"208","documentation","nt","ot"
+"209","dod","t",
+"210","domain knowledge","t",
+"211","dts","t",
+"212","due diligence","nt","ot"
+"213","dynamic mathematical modeling","t",
+"214","eclipse","t",
+"215","e-commerce","t",
+"216","econometrics","t",
+"217","economics","t",
+"218","eda","t",
+"219","editing","t",
+"220","editor","t",
+"221","education","nt","ot"
+"222","educational research","t",
+"223","ejb","t",
+"224","elasticsearch","t",
+"225","e-learning","t",
+"226","electronics","t",
+"227","embedded systems","t",
+"228","employee engagement","nt","hr"
+"229","endorsements","nt","ot"
+"230","engineering","t",
+"231","engineering mathematics","t",
+"232","english","nt","ot"
+"233","enterprise 2.0","t",
+"234","enterprise architecture","t",
+"235","enterprise collaboration","nt","ss"
+"236","enterprise it strategy","nt","mn"
+"237","enterprise software","t",
+"238","entrepreneurship","nt","ot"
+"239","environmental awareness","nt","ot"
+"240","environmental engineering","t",
+"241","equities","nt","ot"
+"242","erp","t",
+"243","erwin","t",
+"244","etl","t",
+"245","event management","nt","mn"
+"246","eviews","t",
+"247","executive coaching","nt","hr"
+"248","executive management","nt","mn"
+"249","executive reporting","nt","mn"
+"250","expert systems","t",
+"251","exposure","t",
+"252","federal government","nt","ot"
+"253","finance","t",
+"254","financial analysis","t",
+"255","financial controlling","nt","mn"
+"256","financial economics","t",
+"257","financial markets","nt","ot"
+"258","financial modeling","t",
+"259","forecasting","t",
+"260","fortran","t",
+"261","fraud","t",
+"262","fraud analysis","t",
+"263","french","nt","ot"
+"264","future trends","t",
+"265","fx","t",
+"266","game theory","t",
+"267","gamification","t",
+"268","general awesomeness","t",
+"269","generalists","nt","ot"
+"270","genetic algorithms","t",
+"271","gis","t",
+"272","gis programer","t",
+"273","git","t",
+"274","github","t",
+"275","global human resources management","nt","hr"
+"276","gnu octave","t",
+"277","go-to-market strategy","t",
+"278","gov 2.0","t",
+"279","governance","nt","mn"
+"280","government","nt","ot"
+"281","graph mining","t",
+"282","graph theory","t",
+"283","grassroots marketing","t",
+"284","gwt","t",
+"285","hadoop","t",
+"286","hadoop platform","t",
+"287","hdfs","t",
+"288","hidden markov models","t",
+"289","high availability","t",
+"290","high performance computing","t",
+"291","higher education","nt","ot"
+"292","hindi","nt","ot"
+"293","hive","t",
+"294","homeland security","t",
+"295","hospitality","t",
+"296","hr software","t",
+"297","hr strategy","nt","hr"
+"298","hr transformation","nt","hr"
+"299","html","t",
+"300","html + css","t",
+"301","html5","t",
+"302","human capital","nt","hr"
+"303","human computer interaction","t",
+"304","human computer interfaces","t",
+"305","human resources","nt","hr"
+"306","human-computer interaction","t",
+"307","hydraulics","t",
+"308","ibm db2","t",
+"309","ibm watson","t",
+"310","image analysis","t",
+"311","image processing","t",
+"312","imo (international mathematical olympiads)","nt",
+"313","industrial internet","t",
+"314","information assurance","t",
+"315","information management","nt","mn"
+"316","information retrieval","t",
+"317","information security","t",
+"318","innovation","t",
+"319","inspiring leadership","nt","mn"
+"320","inspiring people","nt","hr"
+"321","integrated marketing","nt","mn"
+"322","integration","t",
+"323","intelligence","t",
+"324","intelligence community","t",
+"325","intelligent natural user interfaces","t",
+"326","intelligent speech-enabled systems","t",
+"327","interactive data visualization design","t",
+"328","international policy","nt","mn"
+"329","internet of things","t",
+"330","internet recruiting","t",
+"331","internet security","t",
+"332","invention","nt","ot"
+"333","investments","nt","mn"
+"334","iot","t",
+"335","it management","nt","mn"
+"336","it operations","t",
+"337","it strategy","t",
+"338","java","t",
+"339","javascript","t",
+"340","jboss application server","t",
+"341","jmp","t",
+"342","jpa","t",
+"343","julia","t",
+"344","kã¼nstliche intelligenz","t",
+"345","keen io","t",
+"346","key performance indicators","nt","mn"
+"347","knime","t",
+"348","knowledge","nt","hr"
+"349","knowledge discovery","t",
+"350","knowledge management","nt","mn"
+"351","knowledge-based systems","t",
+"352","kontinuierliche verbesserung","t",
+"353","kpi","nt","mn"
+"354","kpi implementation","nt","mn"
+"355","land development","t",
+"356","latex","t",
+"357","lead optimization","t",
+"358","leadership","nt","mn"
+"359","leadership development","nt","hr"
+"360","learning","nt","hr"
+"361","learning management","nt","hr"
+"362","learning management systems","nt","hr"
+"363","legal research","t",
+"364","legal writing","nt","ot"
+"365","lift station design","t",
+"366","linear regression","t",
+"367","linux","t",
+"368","logging","t",
+"369","logistic regression","t",
+"370","lucene","t",
+"371","machine learning","t",
+"372","macroeconomics","t",
+"373","management","nt","mn"
+"374","management consulting","nt","mn"
+"375","mandarin","nt","ot"
+"376","mapreduce","t",
+"377","market analysis","nt","mn"
+"378","market opportunity analysis","nt","mn"
+"379","market research","t",
+"380","marketing","nt","mn"
+"381","marketing communications","nt","co"
+"382","marketing management","nt","mn"
+"383","marketing research","t",
+"384","marketing strategy","nt","mn"
+"385","marketo","t",
+"386","maschinelles lernen","t",
+"387","mathematica","t",
+"388","mathematical analysis","t",
+"389","mathematical modeling","t",
+"390","mathematical modelling and simulation","t",
+"391","mathematical programming","t",
+"392","mathematics","t",
+"393","matlab","t",
+"394","mentoring","nt","hr"
+"395","mergers & acquisitions","nt","mn"
+"396","metadata management","t",
+"397","metadata standards","t",
+"398","micosoft office suite","t",
+"399","microcontrollers","t",
+"400","microsoft excel","t",
+"401","microsoft office","t",
+"402","microsoft sql server","t",
+"403","military","nt","ot"
+"404","minitab","t",
+"405","mobile applications","t",
+"406","mobile internet","t",
+"407","mobile marketing","t",
+"408","modeling","t",
+"409","monetization","t",
+"410","mongodb","t",
+"411","motivational speaking","nt","co"
+"412","mpp","t",
+"413","multi agent systems","t",
+"414","multithreading","t",
+"415","multivariate statistics","t",
+"416","multivariate testing","t",
+"417","music","nt","ot"
+"418","mysql","t",
+"419","national security","t",
+"420","natural language processing","t",
+"421","navy","nt","ot"
+"422","neo4j","t",
+"423","network architecture","t",
+"424","network intelligence","t",
+"425","network security","t",
+"426","networking","t",
+"427","neural networks","t",
+"428","new business development","nt","mn"
+"429","new media","t",
+"430","new web technologies","t",
+"431","nginx","t",
+"432","nlp","t",
+"433","nosql","t",
+"434","numerical analysis","t",
+"435","object oriented design","t",
+"436","objective-c","t",
+"437","olap","t",
+"438","omniture","t",
+"439","online advertising","t",
+"440","online marketing","t",
+"441","online publishing","t",
+"442","online training","t",
+"443","ontology","nt","ot"
+"444","open source","t",
+"445","open source data science tools","t",
+"446","opencv","t",
+"447","opengl","t",
+"448","optimization","t",
+"449","oracle","t",
+"450","oracle rac","t",
+"451","organizational design","t",
+"452","organizational development","nt","mn"
+"453","organizational effectiveness","nt","mn"
+"454","organizational learning","nt","hr"
+"455","other scientific disciplines","nt","ot"
+"456","owning up to the title","nt","ot"
+"457","paper craft","t",
+"458","parallel computing","t",
+"459","pattern recognition","t",
+"460","pattern recognition%2f","t",
+"461","pcb design","t",
+"462","people management","nt","hr"
+"463","people-oriented","nt","hr"
+"464","peoplesoft","t",
+"465","peoplesoft crm","t",
+"466","performance improvement","nt","mn"
+"467","performance management","nt","mn"
+"468","performance measurement","t",
+"469","performance tuning","t",
+"470","perl","t",
+"471","personnel management","nt","hr"
+"472","php","t",
+"473","physical sciences","t",
+"474","physics","t",
+"475","pki","t",
+"476","pl/sql","t",
+"477","play framework","t",
+"478","poetry","nt","ot"
+"479","portfolio management","nt","mn"
+"480","positioning","nt","mn"
+"481","ppc","t",
+"482","predictive analytics","t",
+"483","predictive modeling","t",
+"484","pre-sales","nt","mn"
+"485","prescriptive analytics","t",
+"486","presentations","nt","co"
+"487","probabilistic modelling","t",
+"488","probabilistic models","t",
+"489","problem solving","nt","ot"
+"490","process improvement","nt","mn"
+"491","product development","t",
+"492","product evangelism","nt","co"
+"493","product management","nt","mn"
+"494","product marketing","nt","mn"
+"495","produktentwicklung","t",
+"496","professional services","t",
+"497","program management","nt","mn"
+"498","programmatic media buying","t",
+"499","programming","t",
+"500","project management","nt","mn"
+"501","project planning","t",
+"502","proposal writing","nt","mn"
+"503","proprietary trading","nt","ot"
+"504","prozessverbesserung","t",
+"505","public speaking","nt","co"
+"506","published author","nt","ot"
+"507","publishing","nt","ot"
+"508","python","t",
+"509","python coding","t",
+"510","quantitative analysis","t",
+"511","quantitative analytics","t",
+"512","quantitative data","t",
+"513","quantitative finance","t",
+"514","quantitative investing","t",
+"515","r","t",
+"516","r language","t",
+"517","r programming","t",
+"518","real-time bidding","t",
+"519","recommender systems","t",
+"520","recruiting","nt","hr"
+"521","regression","t",
+"522","regression analysis","t",
+"523","reporting systems","t",
+"524","requirements analysis","t",
+"525","research","t",
+"526","rest","t",
+"527","reusable code","t",
+"528","risk management","nt","mn"
+"529","robotics","t",
+"530","saas","t",
+"531","sales advisor","nt","mn"
+"532","sales management","nt","mn"
+"533","salesforce.com","t",
+"534","sap","t",
+"535","sap erp","t",
+"536","sap implementation","t",
+"537","sas","t",
+"538","sas programming","t",
+"539","scala","t",
+"540","scalability","t",
+"541","science","t",
+"542","science communication","nt","co"
+"543","science education","nt","hr"
+"544","scientific computing","t",
+"545","scientific training","nt","hr"
+"546","scikit-learn","t",
+"547","scrum","t",
+"548","sdlc","t",
+"549","search","t",
+"550","search engine technology","t",
+"551","securities regulation","t",
+"552","security","t",
+"553","security clearance","t",
+"554","segmentation","nt","mn"
+"555","sem","t",
+"556","semantic technologies","t",
+"557","semantic web","t",
+"558","semiconductors","t",
+"559","seo","t",
+"560","sewer","t",
+"561","siebel","t",
+"562","siebel crm","t",
+"563","signal processing","t",
+"564","simulation","t",
+"565","simulationen","t",
+"566","simulations","t",
+"567","six sigma","t",
+"568","slightly more advanced math concepts","t",
+"569","soa","t",
+"570","social business","t",
+"571","social crm","t",
+"572","social media","t",
+"573","social media marketing","t",
+"574","social media measurement","t",
+"575","social network analysis","t",
+"576","social networking","t",
+"577","social networking sites","t",
+"578","software architecture","t",
+"579","software as a service (saas)","t",
+"580","software consulting","t",
+"581","software deployment","t",
+"582","software design","t",
+"583","software development","t",
+"584","software documentation","t",
+"585","software engineering","t",
+"586","softwareentwicklung","t",
+"587","solution architecture","t",
+"588","spark","t",
+"589","spatial analysis","t",
+"590","spatial databases","t",
+"591","spring framework","t",
+"592","spss","t",
+"593","sql","t",
+"594","sql database","t",
+"595","sql server 2000-2008","t",
+"596","sql server integration services (ssis)","t",
+"597","sql skills","t",
+"598","sql tuning","t",
+"599","ssas","t",
+"600","ssis","t",
+"601","ssrs","t",
+"602","star schema","t",
+"603","start-up consulting","t",
+"604","start-ups","t",
+"605","start-ups management","t",
+"606","statistical arbitrage","t",
+"607","statistical consulting","t",
+"608","statistical data analysis","t",
+"609","statistical inference","t",
+"610","statistical modeling","t",
+"611","statistical modelling","t",
+"612","statistics","t",
+"613","stochastic processes","t",
+"614","stored procedures","t",
+"615","stormwater management","t",
+"616","strategic consulting","nt","mn"
+"617","strategic financial planning","nt","mn"
+"618","strategic partnerships","nt","mn"
+"619","strategic planning","nt","mn"
+"620","strategic thinking","nt","mn"
+"621","strategy","t",
+"622","streaming analytics","t",
+"623","structured data %28sql%29","t",
+"624","succession planning","nt","mn"
+"625","svm","t",
+"626","system architecture","t",
+"627","system deployment","t",
+"628","systems biology","t",
+"629","systems engineering","t",
+"630","tableau","t",
+"631","tableau software","t",
+"632","talent management","nt","hr"
+"633","target identification","nt","mn"
+"634","tax law","nt","mn"
+"635","teaching","nt","hr"
+"636","teaching english as a foreign language","nt","ot"
+"637","team leadership","nt","ss"
+"638","team management","nt","ss"
+"639","teamentwicklung","nt","ss"
+"640","teamwork","nt","ss"
+"641","technical presentations","nt","co"
+"642","technical recruiting","nt","hr"
+"643","technical training","nt","hr"
+"644","technical writing","t",
+"645","technological innovation","t",
+"646","technology integration","t",
+"647","telecommunications","t",
+"648","testing","t",
+"649","text analytics","t",
+"650","text mining","t",
+"651","tfs","t",
+"652","the blank canvas","t",
+"653","thought leadership","nt","mn"
+"654","time management","nt","mn"
+"655","time series analysis","t",
+"656","tomcat","t",
+"657","tools","t",
+"658","tools and technology","t",
+"659","trading strategies","nt","mn"
+"660","training","nt","hr"
+"661","troubleshooting","t",
+"662","t-sql","t",
+"663","uml","t",
+"664","understand the business and the problem","nt","ot"
+"665","understanding the data","t",
+"666","unix","t",
+"667","unstructured data","t",
+"668","unstructured data %283-5 top nosql dbs%29","t",
+"669","unternehmensfã¼hrung","t",
+"670","user experience","t",
+"671","value based selling","nt","mn"
+"672","vendor management","nt","mn"
+"673","venture capital","nt","mn"
+"674","verã¤nderungsmanagement","t",
+"675","version control","t",
+"676","vim","t",
+"677","virtual personal assistants","t",
+"678","visionary","t",
+"679","visual basic","t",
+"680","visual studio","t",
+"681","vulnerability assessment","nt","mn"
+"682","waste management","t",
+"683","wastewater treatment","t",
+"684","wastewater treatment design","t",
+"685","water distribution design","t",
+"686","water quality","t",
+"687","watercolor","t",
+"688","wealth management","nt","mn"
+"689","web 2.0","t",
+"690","web analytics","t",
+"691","web development","t",
+"692","web mining","t",
+"693","web services","t",
+"694","weka","t",
+"695","windows server","t",
+"696","working with children","nt","ot"
+"697","writing","nt","ot"
+"698","writing modular","t",
+"699","xml","t",
